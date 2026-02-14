@@ -103,6 +103,10 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
 # VINTF
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest.xml
