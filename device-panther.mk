@@ -16,7 +16,6 @@ include device/google/gs201/device-shipping-common.mk
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    device/google/pantah/panther/overlay-lineage \
     device/google/pantah/overlay-lineage
 
 PRODUCT_PACKAGES += \
@@ -41,6 +40,9 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGVU6C \
     SettingsOverlayGVU6C_VN \
     SystemUIGoogleOverlayVendorPanther
+
+PRODUCT_PACKAGES += \
+    ApertureOverlayPanther
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk

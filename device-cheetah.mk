@@ -16,7 +16,6 @@ include device/google/gs201/device-shipping-common.mk
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    device/google/pantah/cheetah/overlay-lineage \
     device/google/pantah/overlay-lineage
 
 PRODUCT_PACKAGES += \
@@ -39,6 +38,9 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGFE4J \
     SettingsOverlayGP4BC \
     SystemUIGoogleOverlayVendorCheetah
+
+PRODUCT_PACKAGES += \
+    ApertureOverlayCheetah
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
