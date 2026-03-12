@@ -10,10 +10,6 @@ TARGET_KERNEL_DEVICE := pantah
 TARGET_KERNEL_DIR := device/google/$(TARGET_KERNEL_DEVICE)-kernels/$(TARGET_LINUX_KERNEL_VERSION)
 TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
 
-DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay
-DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay-lineage
-DEVICE_PACKAGE_OVERLAYS += device/google/pantah/overlay-lineage
-
 include device/google/gs201/device-shipping-common.mk
 
 # Bluetooth
@@ -38,8 +34,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml
 
 PRODUCT_PACKAGES += \
-	android.hardware.nfc-service.st \
-	NfcOverlayCheetah
+	android.hardware.nfc-service.st
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -49,20 +44,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
-
-PRODUCT_PACKAGES += \
-    UwbOverlayC10 \
-    WifiOverlay2022_C10
-
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay \
-    AvoidAppsInCutoutOverlay
-
-# SKU specific RROs
-PRODUCT_PACKAGES += \
-    SettingsOverlayGFE4J \
-    SettingsOverlayGE2AE \
-    SettingsOverlayGP4BC
 
 # Device features
 PRODUCT_COPY_FILES += \
@@ -76,9 +57,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
 
-PRODUCT_PACKAGES += \
-    EuiccSupportPixelOverlay
-
 # Fingerprint
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -90,6 +68,32 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.recovery.cheetah.touch.rc
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    device/google/pantah/cheetah/overlay-lineage \
+    device/google/pantah/overlay-lineage
+
+PRODUCT_PACKAGES += \
+    FrameworkResOverlayProductPantah \
+    FrameworkResOverlayVendorPantah \
+    ONSOverlayVendorPantah \
+    PixelNfcOverlayPantah \
+    SafetyRegulatoryInfoOverlayProductPantah \
+    SystemUIGoogleOverlayVendorPantah
+
+PRODUCT_PACKAGES += \
+    DMServiceOverlayProductGs201 \
+    DMServiceOverlayVendorCheetah \
+    FrameworkResOverlayVendorCheetah \
+    PixelNfcOverlayCheetah \
+    PixelWifiOverlay2023_midyear_F10 \
+    SettingsGoogleCheetahOverlay \
+    SettingsGoogleOverlayProductCheetah \
+    SettingsOverlayGE2AE \
+    SettingsOverlayGFE4J \
+    SettingsOverlayGP4BC \
+    SystemUIGoogleOverlayVendorCheetah
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
