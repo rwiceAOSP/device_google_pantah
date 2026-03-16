@@ -15,9 +15,6 @@ TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
 include device/google/gs201/device-shipping-common.mk
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    device/google/pantah/overlay-lineage
-
 PRODUCT_PACKAGES += \
     FrameworkResOverlayProductPantah \
     FrameworkResOverlayVendorPantah \
