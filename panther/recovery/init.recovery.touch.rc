@@ -1,2 +1,0 @@
-on init
-   insmod /lib/modules/focal_touch.ko
