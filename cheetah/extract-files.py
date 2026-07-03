@@ -12,10 +12,6 @@ from extract_utils.extract_pixel import (
     pixel_firmware_regex,
 )
 from extract_utils.file import FileArgs, FileList
-from extract_utils.fixups_blob import (
-    blob_fixup,
-    blob_fixups_user_type,
-)
 from extract_utils.fixups_lib import (
     lib_fixup_remove,
     lib_fixups,
@@ -46,18 +42,6 @@ lib_fixups: lib_fixups_user_type = {
     'android.hardware.sensors-V2-ndk': lib_fixup_remove,
 }
 
-blob_fixups: blob_fixups_user_type = {
-    'product/etc/felica/common.cfg': blob_fixup()
-        .patch_file('osaifu-keitai.patch'),
-    'vendor/etc/init/init.modem_logging_control.rc': blob_fixup()
-        .regex_replace(' && property:ro.debuggable=0', ''),
-    (
-        'vendor/etc/init/fingerprint-goodix.rc',
-        'vendor/etc/init/init.storage.rc',
-    ) : blob_fixup()
-        .regex_replace('ro.build.type=userdebug', 'ro.debuggable=1'),
-}  # fmt: skip
-
 extract_fns: extract_fns_user_type = {
     pixel_factory_image_regex: extract_pixel_factory_image,
     pixel_firmware_regex: extract_pixel_firmware,
@@ -67,7 +51,6 @@ module = ExtractUtilsModule(
     'cheetah',
     'google',
     device_rel_path='device/google/pantah/cheetah',
-    blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
     add_generated_carriersettings_file=True,

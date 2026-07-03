@@ -16,7 +16,6 @@ include device/google/gs201/common.mk
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworkResOverlayProductPantah \
     FrameworkResOverlayVendorPantah \
     ONSOverlayVendorPantah \
     PixelNfcOverlayPantah \
@@ -36,22 +35,9 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGP4BC \
     SystemUIGoogleOverlayVendorCheetah
 
-PRODUCT_PACKAGES += \
-    ApertureOverlayCheetah
-
-# PowerShare
-include hardware/google/pixel/powershare/device.mk
-
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/vendor.prop
-
-# Recovery
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/recovery/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.cheetah.rc
-
-PRODUCT_PACKAGES += \
-    init.recovery.cheetah.touch.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

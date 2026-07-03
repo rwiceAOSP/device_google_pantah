@@ -2,16 +2,15 @@
 
 # product partition
 
-# AiAi
-product/priv-app/DeviceIntelligenceNetworkPrebuiltAstrea/DeviceIntelligenceNetworkPrebuiltAstrea.apk;PRESIGNED
-product/priv-app/DevicePersonalizationAiAiPrebuiltPixel2022/DevicePersonalizationAiAiPrebuiltPixel2022.apk;PRESIGNED
-
 # Audio
 product/etc/ambient/matcher_tah.leveldb
 product/etc/firmware/music_detector.descriptor
 product/etc/firmware/music_detector.sound_model
 product/etc/firmware/music_detector.sound_model_2
 product/etc/firmware/music_detector.sound_model_tflite
+
+# Camera
+product/priv-app/GoogleCamera/GoogleCamera.apk;OVERRIDES=Camera2;PRESIGNED
 
 # Camera extensions
 product/etc/permissions/androidx.camera.extensions.impl.xml
@@ -44,29 +43,9 @@ product/etc/sysconfig/preinstalled-packages-com.shannon.rcsservice.xml
 # NFC
 product/etc/libnfc-nci.conf
 
-# Now Playing
-product/app/NowPlayingPrebuilt/NowPlayingPrebuilt.apk
-product/etc/default-permissions/default-permissions_nowplaying.xml
-product/etc/sysconfig/nowplaying_app_26q1.xml
-
 # Permissions
-product/etc/permissions/privapp-permissions-google-p.xml:product/etc/permissions/privapp-permissions-google-p-lineage.xml
 product/etc/sysconfig/GoogleCamera_6gb_or_more_ram.xml
-product/etc/sysconfig/google-hiddenapi-package-whitelist.xml
-product/etc/sysconfig/nexus.xml
-product/etc/sysconfig/pixel_experience_2017.xml
-product/etc/sysconfig/pixel_experience_2018.xml
-product/etc/sysconfig/pixel_experience_2019.xml
-product/etc/sysconfig/pixel_experience_2019_midyear.xml
-product/etc/sysconfig/pixel_experience_2020.xml
-product/etc/sysconfig/pixel_experience_2020_midyear.xml
-product/etc/sysconfig/pixel_experience_2021.xml
-product/etc/sysconfig/pixel_experience_2021_midyear.xml
-product/etc/sysconfig/pixel_experience_2022.xml
-product/etc/sysconfig/pixel_experience_2022_midyear.xml
-product/etc/sysconfig/preinstalled-packages-pixel-2022.xml
 product/etc/sysconfig/preinstalled-packages-product-gs201-device.xml
-product/etc/sysconfig/preinstalled_packages_pixel_experience_2021_and_newer.xml
 
 # Radio
 product/etc/default-permissions/default-permissions_com.google.android.apps.carrier.carrierwifi.xml
@@ -79,7 +58,7 @@ product/lib/libdmengine.so;SYMLINK=product/priv-app/DMService/lib/arm/libdmengin
 product/lib/libdmjavaplugin.so;SYMLINK=product/priv-app/DMService/lib/arm/libdmjavaplugin.so
 product/lib64/libdmengine.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmengine.so
 product/lib64/libdmjavaplugin.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmjavaplugin.so
-product/priv-app/CarrierSettings/CarrierSettings.apk;PRESIGNED
+product/priv-app/CarrierSettings/CarrierSettings.apk;OVERRIDES=CarrierConfig;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -156,9 +135,6 @@ system_ext/lib64/libmediaadaptor.so
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
 system_ext/priv-app/ShannonRcs/ShannonRcs.apk;PRESIGNED
-
-# Permissions
-system_ext/etc/permissions/privapp-permissions-google-se.xml:system_ext/etc/permissions/privapp-permissions-google-se-lineage.xml
 
 # Radio
 system_ext/etc/default-permissions/default-permissions-euiccpixel.xml
