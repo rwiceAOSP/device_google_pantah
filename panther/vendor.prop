@@ -17,7 +17,6 @@ vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=2
 
 # Fingerprint
 persist.vendor.udfps.als_feed_forward_supported=true
-persist.vendor.udfps.fps_touch_handler_supported=false
 persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 ro.vendor.fingerprint.ta.name=g7.app
 
