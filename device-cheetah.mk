@@ -33,7 +33,8 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGE2AE \
     SettingsOverlayGFE4J \
     SettingsOverlayGP4BC \
-    SystemUIGoogleOverlayVendorCheetah
+    SystemUIGoogleOverlayVendorCheetah \
+    UdfpsOverlay
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop

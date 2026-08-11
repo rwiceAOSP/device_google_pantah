@@ -35,7 +35,8 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGQML3 \
     SettingsOverlayGVU6C \
     SettingsOverlayGVU6C_VN \
-    SystemUIGoogleOverlayVendorPanther
+    SystemUIGoogleOverlayVendorPanther \
+    UdfpsOverlay
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/$(DEVICE_CODENAME)/product.prop
